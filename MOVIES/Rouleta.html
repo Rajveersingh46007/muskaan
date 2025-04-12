@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Galería</title>
+  <style>
+   body {
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
+    background: url("../95E884CF-0B42-418B-AF29-3B115F557C49.JPG") no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .mode-switcher {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .mode-switcher button {
+    background: #222;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .mode-switcher button.active {
+    background: #f39c12;
+    color: black;
+  }
+
+  /* RUEDA */
+  .carousel-container {
+    width: 100vw;
+    height: 80vh;
+    perspective: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
+  }
+
+  .carousel img, .carousel video {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+
+  /* LISTA */
+  .list-container {
+    display: none;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .list-container img, .list-container video {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .list-container img:hover, .list-container video:hover {
+    transform: scale(1.05);
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .lightbox img, .lightbox video {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 10px;
+  }
+
+  .lightbox.active {
+    display: flex;
+  }
+</style>
+</head>
+<body>
+
+  <div class="mode-switcher">
+    <button id="btn-rueda" class="active">GolGol wekhna</button>
+    <button id="btn-lista">Sidda sidda wekhna</button>
+  </div>
+
+  <div class="carousel-container" id="carousel-container">
+    <div class="carousel" id="carousel">
+      <!-- AQUÍ VAN TUS VIDEOS E IMÁGENES EN LA RULETA -->
+      <img src="Ari-eyes.jpg" alt="Foto 1" />
+      <img src="Ari1.JPG" alt="Foto 2" />
+      <img src="Ari2.JPG" alt="Foto 3" />
+      <img src="Aribebe.JPG" alt="Foto 4" />
+      <img src="arikiss.JPG" alt="Foto 5" />
+      <img src="Bethi.JPG" alt="Foto 1" />
+      <img src="mirorfoto.JPG" alt="Foto 2" />
+      <img src="foto11.JPG" alt="Foto 3" />
+      <img src="foto12.JPG" alt="Foto 4" />
+      <img src="foto13.JPG" alt="Foto 4" />
+      <img src="foto14.JPG" alt="Foto 4" />
+      <video autoplay muted loop>
+        <source src="video10.MOV" type="video/mp4" />
+      </video>
+      <video autoplay muted loop>
+        <source src="video2.MOV" type="video/mp4" />
+      </video>
+      <video autoplay muted loop>
+        <source src="video3.MOV" type="video/mp4" />
+      </video>
+      <video autoplay muted loop>
+        <source src="video4.MOV" type="video/mp4" />
+      </video>
+      <video autoplay muted loop>
+        <source src="video5.MOV" type="video/mp4" />
+      </video>
+      <video autoplay muted loop>
+        <source src="video6.MOV" type="video/mp4" />
+      </video>
+      <video autoplay muted loop>
+        <source src="video7.MOV" type="video/mp4" />
+      </video>
+      <video autoplay muted loop>
+        <source src="video8.MOV" type="video/mp4" />
+      </video>
+      <video autoplay muted loop>
+        <source src="video9.MOV" type="video/mp4" />
+      </video>
+      <video autoplay muted loop>
+        <source src="Video1.MOV" type="video/mp4" />
+      </video>
+      <video autoplay muted loop>
+        <source src="video22.MP4" type="video/mp4" />
+      </video>
+      <video autoplay muted loop>
+        <source src="video21.MOV" type="video/mp4" />
+      </video>
+      <video autoplay muted loop>
+        <source src="video20.MOV" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+  <nav role="navigation" class="side-nav-menu w-nav-menu"><a href="Portada.html" class="side-nav-link w-nav-link">Home</a><a href="Ari Info.html" aria-current="page" class="side-nav-link w-nav-link w--current">Muskaan</a><a href="Sobre ella.html" class="side-nav-link w-nav-link">Sobre Ella</a><a href="Rouleta.html" class="side-nav-link w-nav-link">Roulet</a><a href="Conclusion.html" class="side-nav-link w-nav-link">Conclusion</a></nav>
+
+  <div class="list-container" id="list-container">
+    <!-- AQUÍ LOS MISMOS VIDEOS E IMÁGENES EN LISTA -->
+    <img src="Ari-eyes.jpg" alt="Foto 1" />
+    <img src="Ari1.JPG" alt="Foto 2" />
+    <img src="Ari2.JPG" alt="Foto 3" />
+    <img src="Aribebe.JPG" alt="Foto 4" />
+    <img src="arikiss.JPG" alt="Foto 5" />
+    <img src="Bethi.JPG" alt="Foto 1" />
+    <img src="mirorfoto.JPG" alt="Foto 2" />
+    <img src="foto11.JPG" alt="Foto 3" />
+    <img src="foto12.JPG" alt="Foto 4" />
+    <img src="foto13.JPG" alt="Foto 4" />
+    <img src="foto14.JPG" alt="Foto 4" />
+    <video autoplay muted loop>
+      <source src="video10.MOV" type="video/mp4" />
+    </video>
+    <video autoplay muted loop>
+      <source src="video2.MOV" type="video/mp4" />
+    </video>
+    <video autoplay muted loop>
+      <source src="video3.MOV" type="video/mp4" />
+    </video>
+    <video autoplay muted loop>
+      <source src="video4.MOV" type="video/mp4" />
+    </video>
+    <video autoplay muted loop>
+      <source src="video5.MOV" type="video/mp4" />
+    </video>
+    <video autoplay muted loop>
+      <source src="video6.MOV" type="video/mp4" />
+    </video>
+    <video autoplay muted loop>
+      <source src="video7.MOV" type="video/mp4" />
+    </video>
+    <video autoplay muted loop>
+      <source src="video8.MOV" type="video/mp4" />
+    </video>
+    <video autoplay muted loop>
+      <source src="video9.MOV" type="video/mp4" />
+    </video>
+    <video autoplay muted loop>
+      <source src="Video1.MOV" type="video/mp4" />
+    </video>
+    <video autoplay muted loop>
+      <source src="video22.MP4" type="video/mp4" />
+    </video>
+    <video autoplay muted loop>
+      <source src="video21.MOV" type="video/mp4" />
+    </video>
+    <video autoplay muted loop>
+      <source src="video20.MOV" type="video/mp4" />
+    </video>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <div id="lightbox-content">
+      <img id="lightbox-img" src="" alt="imagen ampliada" />
+      <video id="lightbox-video" controls>
+        <source src="" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+
+  <script>
+    // Ruleta 3D
+    const carousel = document.getElementById('carousel');
+    const items = carousel.querySelectorAll('img, video');
+    const total = items.length;
+    const angle = 360 / total;
+
+    items.forEach((item, i) => {
+      item.style.transform = `rotateY(${i * angle}deg) translateZ(400px)`;
+    });
+
+    // Lightbox (clic para agrandar imagen o video)
+    const allItems = document.querySelectorAll('.carousel img, .carousel video, .list-container img, .list-container video');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxVideo = document.getElementById('lightbox-video');
+
+    allItems.forEach(item => {
+      item.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        if (item.tagName.toLowerCase() === 'img') {
+          lightboxImg.src = item.src;
+          lightboxImg.style.display = 'block';
+          lightboxVideo.style.display = 'none';
+        } else if (item.tagName.toLowerCase() === 'video') {
+          lightboxVideo.src = item.querySelector('source').src;
+          lightboxVideo.style.display = 'block';
+          lightboxImg.style.display = 'none';
+          lightboxVideo.play();
+        }
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+      lightboxVideo.pause();
+    });
+
+    // Botones para cambiar de vista
+    const btnRueda = document.getElementById('btn-rueda');
+    const btnLista = document.getElementById('btn-lista');
+    const carouselContainer = document.getElementById('carousel-container');
+    const listContainer = document.getElementById('list-container');
+
+    btnRueda.addEventListener('click', () => {
+      btnRueda.classList.add('active');
+      btnLista.classList.remove('active');
+      carouselContainer.style.display = 'flex';
+      listContainer.style.display = 'none';
+    });
+
+    btnLista.addEventListener('click', () => {
+      btnLista.classList.add('active');
+      btnRueda.classList.remove('active');
+      carouselContainer.style.display = 'none';
+      listContainer.style.display = 'flex';
+    });
+  </script>
+</body>
+</html>

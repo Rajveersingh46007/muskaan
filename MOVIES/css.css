@@ -1,0 +1,42 @@
+/* Reseteamos los márgenes y padding por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo con la foto de tu novia (asegúrate de tener la imagen en el mismo directorio) */
+body {
+    background-image: url('juntos.JPEG'); /* Cambia el nombre del archivo por el de tu foto */
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Para que ocupe toda la pantalla */
+}
+
+/* Contenedor central con opacidad para que el texto sea legible */
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con transparencia */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 80%;
+    width: 500px;
+}
+
+/* Estilo para el título */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+}
+
+/* Estilo para el párrafo */
+p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
